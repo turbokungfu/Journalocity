@@ -23,14 +23,14 @@ export const StateContext = ({ children }) => {
       const updatedCartItems = cartItems.map((cartProduct) => {
         if(cartProduct._id === product._id) return {
           ...cartProduct,
-          quantity: cartProduct.quantity + quantity
+          quantity: cartProduct.quantity + quantity,
         }
       })
 
       setCartItems(updatedCartItems);
     } else {
       product.quantity = quantity;
-      
+      setQty((qty) => qty = 1);
       setCartItems([...cartItems, { ...product }]);
     }
 
@@ -75,7 +75,7 @@ export const StateContext = ({ children }) => {
       return prevQty - 1;
     });
   }
-
+console.log(qty)
   return (
     <Context.Provider
       value={{
