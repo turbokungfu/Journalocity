@@ -1,4 +1,7 @@
 import { MongoClient } from 'mongodb';
+import dotenv from 'dotenv';
+dotenv.config();
+
 
 const dbName = process.env.VITE_MONGODB_DATABASE;
 const mongoUri = process.env.VITE_MONGO_URI;

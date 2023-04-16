@@ -5,7 +5,7 @@ export const handler = async () => {
 
 	//
 	try {
-	
+	console.log('hello')
 		//connect
 		await dbClient.connect();
 		const articles = dbClient.articlesCollection();

@@ -278,13 +278,13 @@ Home
 }
 /* 
 ====== 
-Projects
+Articles
 ======
 */
 .section {
 	padding: 2rem 0;
 }
-.projects-section {
+.articles-section {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr;
@@ -292,7 +292,7 @@ Projects
 	padding-right: 4rem;
 	padding-left: 4rem;
 }
-.project-controls {
+.article-controls {
 	margin: 1rem;
 	display: flex;
 	justify-content: space-between;
@@ -305,7 +305,7 @@ Projects
 	text-align: center;
 	margin-bottom: 3.5rem;
 }
-.projects-center {
+.articles-center {
 	width: var(--smallWidth);
 	margin: 0 auto;
 	max-width: var(--maxWidth);
@@ -321,7 +321,7 @@ Projects
 	text-transform: capitalize;
 	font-size: 2.3rem;
 }
-.project {
+.article {
 	background: var(--mainWhite);
 	margin-bottom: 2rem;
 	box-shadow: var(--lightShadow);
@@ -329,7 +329,7 @@ Projects
 	display: grid;
 	grid-template-rows: auto 1fr;
 }
-.project:hover {
+.article:hover {
 	box-shadow: var(--darkShadow);
 }
 .img-container {
@@ -338,10 +338,10 @@ Projects
 	position: relative;
 	/* height: 5rem; */
 }
-.project img {
+.article img {
 	transition: var(--mainTransition);
 }
-.project:hover img {
+.article:hover img {
 	opacity: 0.3;
 }
 
@@ -350,7 +350,7 @@ Projects
 	height: 100%;
 	object-fit: cover;
 }
-.project-link {
+.article-link {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -358,23 +358,23 @@ Projects
 	opacity: 0;
 	transition: var(--mainTransition);
 }
-.project:hover .project-link {
+.article:hover .article-link {
 	opacity: 1;
 }
-.project-footer {
+.article-footer {
 	padding: 0rem 1rem 1rem 1rem;
 	text-align: center;
 	letter-spacing: var(--mainSpacing);
 	display: grid;
 	grid-template-rows: 1fr auto;
 }
-.project-title {
+.article-title {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 0.8rem;
 	margin-bottom: 0.5rem;
 }
-.project-price {
+.article-price {
 	color: var(--primaryColor);
 	font-weight: bold;
 	margin-bottom: 0;
@@ -389,7 +389,7 @@ Projects
 	background: rgb(228, 175, 175);
 }
 @media (min-width: 768px) {
-	.projects-section {
+	.articles-section {
 		grid-template-columns: repeat(2, 1fr);
 	}
 }
@@ -491,22 +491,22 @@ Ez Modal
 }
 /* 
 ====== 
-Single Project
+Single article
 ======
 */
-.single-project {
+.single-article {
 	width: var(--smallWidth);
 	max-width: var(--maxWidth);
 	margin: 0 auto;
 	margin-top: 10rem;
 }
-.single-project-container {
+.single-article-container {
 	margin: 4rem 0;
 }
-.single-project article {
+.single-article article {
 	margin-bottom: 3rem;
 }
-.single-project-table {
+.single-article-table {
 	border-collapse: collapse;
 	width: 100%;
 }
@@ -523,25 +523,25 @@ tr:nth-child(odd) {
 footer {
 	padding: 1rem;
 }
-.single-project-img {
+.single-article-img {
 	max-width: 20rem;
 	margin: 0 auto;
 	align-self: center;
 }
-.single-project h1 {
+.single-article h1 {
 	text-transform: capitalize;
 	font-size: 2.3rem;
 	letter-spacing: var(--mainSpacing);
 }
-.single-project h2 {
+.single-article h2 {
 	color: var(--primaryColor);
 }
-.single-project p {
+.single-article p {
 	line-height: 2;
 	letter-spacing: 1px;
 }
 @media screen and (min-width: 992px) {
-	.single-project-container {
+	.single-article-container {
 		display: grid;
 		grid-template-columns: 2fr 3fr;
 		column-gap: 3rem;
@@ -550,10 +550,10 @@ footer {
 
 /* 
 ====== 
-Project Item
+article Item
 ======
 */
-.project-item-article {
+.article-item-article {
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 	/* border-radius: 5px; */
 	border-radius: 5%;
@@ -561,24 +561,24 @@ Project Item
 	margin: 1rem;
 }
 
-.project-item-header,
-.project-item-content,
-.project-item-footer {
+.article-item-header,
+.article-item-content,
+.article-item-footer {
 	padding: 0.5rem;
 }
 
-.project-item-image {
+.article-item-image {
 	width: 100%;
 	height: 14rem;
 }
 
-.project-item-image img {
+.article-item-image img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-.project-item-header h1 {
+.article-item-header h1 {
 	display: flex;
 	justify-content: space-between;
 	font-size: 1.25rem;
@@ -586,13 +586,13 @@ Project Item
 	font-family: 'Roboto Slab', sans-serif;
 }
 
-.project-item-header h2 {
+.article-item-header h2 {
 	font-size: 1rem;
 	color: #808080;
 	margin: 0.5rem 0;
 }
 
-.project-item-content p {
+.article-item-content p {
 	font-size: 1.25rem;
 	margin: 0;
 	height: 4rem;
@@ -731,7 +731,7 @@ Login Form
 }
 /* 
 ====== 
-Project Modal
+article Modal
 ======
 */
 .modal-backdrop {
@@ -797,7 +797,7 @@ Badge
 }
 /* 
 ====== 
-Project Filter
+Article Filter
 ======
 */
 .filter-div {

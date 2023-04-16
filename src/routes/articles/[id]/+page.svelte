@@ -8,7 +8,7 @@
 	//imports
 	import articles from '$lib/stores/articles';
 
-	//reactive for project
+	//reactive for article
 	let article = '';
 	$: article = $articles.find((item) => item._id === id);
 </script>
@@ -20,18 +20,18 @@
 {#if !article}
 	<p>loading ...</p>
 {:else}
-	<section class="single-project">
+	<section class="single-article">
 		<a href="/articles" class="btn btn-primary"> back to articles</a>
 
-		<div class="single-project-container">
-			<article class="single-project-image">
+		<div class="single-article-container">
+			<article class="single-article-image">
 				<img src={article.image_url} alt={article.articleHeadline} />
 			</article>
 
 			<article>
 				<h1>{article.articleLocation}</h1>
 				<h2> {article.articlePublisher} (location: {article.articleLocation})</h2>
-				<table class="single-project-table">
+				<table class="single-article-table">
 					<thead>
 						<tr>
 							<th>Author</th>

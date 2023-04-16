@@ -13,11 +13,11 @@
 	}
 </script>
 
-<span class="project-controls">
+<span class="article-controls">
 	<Button on:click={handleAdd} mode="outline">New Article</Button>
 </span>
 
-<section class="projects-section">
+<section class="articles-section">
 	{#each $articles as article (article._id)}
 		<div>
 			<ArticleItem {article} />

@@ -2,7 +2,7 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="project-footer">
+<footer class="article-footer">
 	<div class="wrap-flex">
 		<a href="/">
 			<img src="/plume.png" class="logo" alt="logo" />
