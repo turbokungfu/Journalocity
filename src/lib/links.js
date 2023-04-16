@@ -3,4 +3,5 @@ export default [
 	{ title: 'about', href: '/about' },
 	{ title: 'articles', href: '/articles' },
 	{ title: 'publishers', href: '/publishers' },
+	{ title: 'contacts', href: '/contacts' }
 ];
