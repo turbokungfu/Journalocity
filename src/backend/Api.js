@@ -4,7 +4,7 @@ import axios from 'axios';
 
 //fetch all articles
 export async function getArticles() {
-	const url = `/.netlify/functions/getArtoc;es`;
+	const url = `/.netlify/functions/getArticles`;
 	let articles = [];
 	const res = await fetch(url)
 		.then((r) => r.json())
@@ -15,7 +15,7 @@ export async function getArticles() {
 }
 
 // add article
-export async function addArt(newArt, userToken) {
+export async function addArt(newArt) {
 	const url = `/.netlify/functions/addArticle`;
 	const options = {
 		method: 'POST',
@@ -38,7 +38,7 @@ export async function addArt(newArt, userToken) {
 }
 
 //update Article
-export async function updArt(id, articleData, userToken) {
+export async function updArt(id, articleData) {
 	const url = `/.netlify/functions/updArticle`;
 	const options = {
 		method: 'PUT',
@@ -61,7 +61,7 @@ export async function updArt(id, articleData, userToken) {
 }
 
 // delete Article
-export async function delArt(id, userToken) {
+export async function delArt(id) {
 	const url = `/.netlify/functions/delArticle`;
 	const options = {
 		method: 'DELETE',
@@ -83,7 +83,7 @@ export async function delArt(id, userToken) {
 }
 
 //update likes
-export async function incLike(id, articleData, userToken) {
+export async function incLike(id, articleData) {
 	const url = `/.netlify/functions/updArticle`;
 	const options = {
 		method: 'PUT',
@@ -105,7 +105,7 @@ export async function incLike(id, articleData, userToken) {
 }
 
 //update article for ezflip
-export async function updEzFlip(id, articleData, userToken) {
+export async function updEzFlip(id, articleData) {
 	const url = `/.netlify/functions/updArticle`;
 	const options = {
 		method: 'PUT',
