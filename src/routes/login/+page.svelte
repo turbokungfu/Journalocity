@@ -20,6 +20,7 @@
 		const simulateLogin = false;
 		let user;
 		if (simulateLogin) {
+            console.log('simlogin');
 			user = 'simulateLogin';
 		} else {
 			if (isMember) {
@@ -30,9 +31,19 @@
 		}
 		if (user) {
 			// should have welcome message
+            console.log('userlogin')
+			appStore.toggleAlert(
+				true,
+				'Welcome to the Flip Project! ' +
+					user.userName.charAt(0).toUpperCase() +
+					user.userName.slice(1),
+				false
+			);
 			goto('/articles');
 		} else {
+            console.log('error')
 			// should have alert here
+			appStore.toggleAlert(true, 'There was a problem trying to Login to this project!', true);
 		}
 	}
 </script>

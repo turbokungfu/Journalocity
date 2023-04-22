@@ -2,22 +2,23 @@ import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
 dotenv.config();
 
-
-const dbName = process.env.VITE_MONGODB_DATABASE;
-const mongoUri = process.env.VITE_MONGO_URI;
+const dbName = process.env.MONGODB_DATABASE;
 
 function createClient() {
-  const client = new MongoClient(mongoUri);
+	const client = new MongoClient(process.env.MONGO_URI);
 
-  client.articlesCollection = function () {
-    return this.db(dbName).collection('articles');
-  };
 
-  client.usersCollection = function () {
-    return this.db(dbName).collection('users');
-  };
 
-  return client;
+	client.projectsCollection = function () {
+		return this.db(dbName).collection('articles');
+	};
+
+	client.usersCollection = function () {
+		return this.db(dbName).collection('users');
+	};
+
+
+	return client;
 }
 
 export { createClient };

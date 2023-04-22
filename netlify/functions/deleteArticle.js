@@ -1,4 +1,6 @@
-//addProject.js
+//delProject.js
+
+import { ObjectId } from 'mongodb';
 import { createClient } from '../../src/lib/db-helper';
 
 export const handler = async (event) => {
@@ -6,16 +8,21 @@ export const handler = async (event) => {
 	let errorStatusCode = 500;
 	//
 	try {
+		//
 		//connect
 		await dbClient.connect();
 		const projects = dbClient.projectsCollection();
 		//
-		// insert new project using data from event body into "projects" collection
-		const { insertedId } = await projects.insertOne(JSON.parse(event.body));
-		// return new user id?
+		// get data from event body (string)
+		const { id } = JSON.parse(event.body);
+
+		// find and delete project (id)from "projects" collection
+		const origId = await projects.deleteOne({ _id: ObjectId(id) });
+
+		// return orig proj data
 		return {
 			statusCode: 200,
-			body: JSON.stringify({ userId: insertedId })
+			body: JSON.stringify({ userId: origId })
 		};
 	} catch (err) {
 		return {

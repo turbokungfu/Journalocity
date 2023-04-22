@@ -1,15 +1,17 @@
 <script>
-	import appStore from '$lib/stores/appStore';
+
 	import links from '$lib/links';
+	import Logio from '$lib/components/Nav/Logio.svelte';
+	import { fly, fade } from 'svelte/transition';
 </script>
 
-<div class="sidebar-container">
-	<div class="sidebar">
+<div class="sidebar-container" transition:fly={{ x: -1000 }}>
+	<div class="sidebar" transition:fade={{ delay: 400 }}>
 		<div class="sidebar-header">
 			<button
 				class="btn-close"
 				on:click={() => {
-					appStore.toggleNav(false);
+					console.log("hello");
 				}}
 			>
 				<i class="fas fa-window-close" />
@@ -22,7 +24,7 @@
 					<a
 						{href}
 						on:click={() => {
-							appStore.toggleNav(false);
+							console.log("hello");
 						}}
 					>
 						{title}
@@ -30,7 +32,7 @@
 				</li>
 			{/each}
 			<li>
-				<!-- login/logout -->
+				<Logio />
 			</li>
 		</ul>
 	</div>

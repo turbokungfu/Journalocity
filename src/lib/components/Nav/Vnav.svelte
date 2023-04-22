@@ -1,6 +1,4 @@
 <script>
-	import appStore from '$lib/stores/appStore';
-	let openNav = appStore.toggleNav;
 </script>
 
 <nav class="navbar">
@@ -8,7 +6,7 @@
 		<button
 			class="btn-sidebar-toggle"
 			on:click={() => {
-				openNav(true);
+				console.log("hello");
 			}}
 		>
 			<i class="fas fa-bars" />

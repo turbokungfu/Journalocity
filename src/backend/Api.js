@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// Note: we do not need the getArticles() api function as we are using Sveltekit preload routes/+page.js function, but I am providing it here for info
+// Note: we do not need the getProjects() api function as we are using Sveltekit preload routes/+page.js function, but I am providing it here for info
 
-//fetch all articles
+//fetch all projects
 export async function getArticles() {
 	const url = `/.netlify/functions/getArticles`;
 	let articles = [];
@@ -15,20 +15,20 @@ export async function getArticles() {
 }
 
 // add article
-export async function addArt(newArt) {
+export async function addArticle(newArticle, userToken) {
 	const url = `/.netlify/functions/addArticle`;
 	const options = {
 		method: 'POST',
 		url: `${url}`,
 		headers: { 'Content-Type': 'application/json' },
-		data: newArt
+		data: newArticle
 	};
 	let res = false;
 	await axios
 		.request(options)
 		.then(function (response) {
 			// netlify returns userId : insertedId - thats why using userId. Its not a user id!!!
-			// console.log('api.addArt response.data: ', response.data);
+			// console.log('api.addProj response.data: ', response.data);
 			res = response.data.userId;
 		})
 		.catch(function (error) {
@@ -37,9 +37,9 @@ export async function addArt(newArt) {
 	return res;
 }
 
-//update Article
-export async function updArt(id, articleData) {
-	const url = `/.netlify/functions/updArticle`;
+//update Project
+export async function updateArticle(id, articleData, userToken) {
+	const url = `/.netlify/functions/updateArticle`;
 	const options = {
 		method: 'PUT',
 		url: `${url}`,
@@ -51,7 +51,7 @@ export async function updArt(id, articleData) {
 		.request(options)
 		.then(function (response) {
 			res = true;
-			console.log('api.upArt: await axios success');
+			console.log('api.upProj: await axios success');
 			console.log(response.data);
 		})
 		.catch(function (error) {
@@ -60,9 +60,9 @@ export async function updArt(id, articleData) {
 	return res;
 }
 
-// delete Article
-export async function delArt(id) {
-	const url = `/.netlify/functions/delArticle`;
+// delete Project
+export async function deleteArticle(id, userToken) {
+	const url = `/.netlify/functions/deleteArticle`;
 	const options = {
 		method: 'DELETE',
 		url: `${url}`,
@@ -83,13 +83,13 @@ export async function delArt(id) {
 }
 
 //update likes
-export async function incLike(id, articleData) {
-	const url = `/.netlify/functions/updArticle`;
+export async function incLike(id, articleData, userToken) {
+	const url = `/.netlify/functions/updProject`;
 	const options = {
 		method: 'PUT',
 		url: `${url}`,
 		headers: { 'Content-Type': 'application/json' },
-		data: articleData
+		data: projectData
 	};
 	let res = false;
 	await axios
@@ -104,14 +104,14 @@ export async function incLike(id, articleData) {
 	return res;
 }
 
-//update article for ezflip
-export async function updEzFlip(id, articleData) {
-	const url = `/.netlify/functions/updArticle`;
+//update project for ezflip
+export async function updEzFlip(id, projectData, userToken) {
+	const url = `/.netlify/functions/updProject`;
 	const options = {
 		method: 'PUT',
 		url: `${url}`,
 		headers: { 'Content-Type': 'application/json' },
-		data: { id: id, ...articleData }
+		data: { id: id, ...projectData }
 	};
 	let res = false;
 	await axios

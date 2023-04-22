@@ -1,12 +1,8 @@
-<script>
-	import Seo from '$lib/components/Seo.svelte';
-</script>
-
-<Seo title="Journalocity" description="The Goal to Triple Journalist Pay" type="WebSite" />
-
 <div class="home">
 	<div class="banner">
-		<h1>Modern Journalism</h1>
-		<h2>journalocity, tm</h2>
+		<h3>Journalocity, tm</h3>
+		<h1>Welcome to Journalocity</h1>
+		<h2>Modern Journalism</h2>
+	
 	</div>
 </div>

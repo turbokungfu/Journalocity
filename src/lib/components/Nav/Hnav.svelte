@@ -1,5 +1,6 @@
 <script>
 	import links from '$lib/links';
+    import Logio from './Logio.svelte';
 </script>
 
 <nav class="navbar">
@@ -17,7 +18,7 @@
 				{/each}
 			</ul>
 			<div class="nav-aside">
-				<!-- login / logout -->
+				<Logio />
 			</div>
 		</div>
 	</div>

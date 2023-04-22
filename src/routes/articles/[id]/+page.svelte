@@ -8,30 +8,30 @@
 	//imports
 	import articles from '$lib/stores/articles';
 
-	//reactive for article
+	//reactive for project
 	let article = '';
 	$: article = $articles.find((item) => item._id === id);
 </script>
 
 <svelte:head>
-	<title>{!article ? 'single article' : article.articleHeadline}</title>
+	<title>{!article ? 'single article' : article.articlename}</title>
 </svelte:head>
 
-{#if !article}
+{#if !article }
 	<p>loading ...</p>
 {:else}
 	<section class="single-article">
 		<a href="/articles" class="btn btn-primary"> back to articles</a>
 
 		<div class="single-article-container">
-			<article class="single-article-image">
+			<article class="single-project-image">
 				<img src={article.image_url} alt={article.articleHeadline} />
 			</article>
 
 			<article>
 				<h1>{article.articleLocation}</h1>
 				<h2> {article.articlePublisher} (location: {article.articleLocation})</h2>
-				<table class="single-article-table">
+				<table class="single-project-table">
 					<thead>
 						<tr>
 							<th>Author</th>
@@ -54,7 +54,6 @@
 				<br />
 
 			</article>
-
 		</div>
 
 		<a href="/articles" class="btn btn-primary"> back to articles</a>
