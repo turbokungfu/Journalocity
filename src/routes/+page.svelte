@@ -7,6 +7,6 @@
 <div class="home">
 	<div class="banner">
 		<h1>Modern Journalism</h1>
-		<h2>Lets do this!</h2>
+		<h2>journalocity, tm</h2>
 	</div>
 </div>
